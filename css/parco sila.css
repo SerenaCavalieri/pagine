@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fefefe;
+    font-family: Arial, sans-serif;
+    color: #000000;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+
+header {
+    max-width: 1100px;
+    margin: 48px auto 0 auto; 
+    padding: 0 20px 16px 20px; 
+}
+
+
+header nav, .navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-bottom: 1px solid #eaeaea !important; 
+    padding-bottom: 16px !important;
+    background: transparent !important;
+}
+
+
+header p, header h1, header .logo, header > a, .logo {
+    margin: 0 !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-size: 1.1rem !important;
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+
+
+header nav ul, .menu {
+    list-style: none !important;
+    display: flex !important;
+    gap: 32px !important; 
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+header nav ul li a, .menu a, header nav a {
+    text-decoration: none !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+    font-size: 0.95rem !important;
+}
+
+header nav ul li a:hover, .menu a:hover, header nav a:hover {
+    color: #358717 !important; 
+    text-decoration: underline !important; 
+}
+
+
+main {
+    max-width: 1100px;
+    margin: 64px auto 0 auto;
+    padding: 0 20px;
+}
+
+
+main section {
+    margin-bottom: 72px;
+    max-width: 650px; 
+    width: 100%;
+}
+
+
+section.intro {
+    max-width: 750px;
+    margin-bottom: 56px;
+}
+
+section.intro h1 {
+    font-size: 56px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+
+section.intro h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+
+
+main section h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: none;
+    margin-bottom: 20px;
+}
+
+main section p {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+
+main section:has(img:not(.attivita-immagini img)) {
+    max-width: 1100px;
+    margin-bottom: 88px;
+}
+
+main section img:not(.attivita-immagini img) {
+    width: 100%;
+    height: 480px; 
+    object-fit: cover;
+    border-radius: 32px; 
+}
+
+
+@media (min-width: 992px) {
+    main:not(:has(.parchi)) {
+        display: grid;
+        grid-template-columns: 6.5fr 3.5fr;
+        align-items: start;
+    }
+
+    main:not(:has(.parchi)) section.intro, 
+    main:not(:has(.parchi)) section:has(img),
+    main:not(:has(.parchi)) section:nth-of-type(3),
+    main:not(:has(.parchi)) section:nth-of-type(4),
+    main:not(:has(.parchi)) section:nth-of-type(5) {
+        grid-column: 1 / span 2;
+    }
+
+    main:not(:has(.parchi)) section:nth-of-type(6) {
+        grid-column: 1;
+        margin-bottom: 0;
+    }
+
+    
+    main section.frase {
+        grid-column: 2;
+        align-self: center; 
+        padding-left: 64px;
+        margin: 0;
+        max-width: 100%;
+    }
+}
+
+section.frase h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 1.3;
+}
+
+
+
+
+main:has(.parchi) section.intro h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.parchi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.card a {
+    display: block;
+    margin-top: 16px;
+    text-decoration: underline; 
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.attivita-contenitore {
+    display: flex;
+    gap: 48px;
+}
+
+.attivita-immagini {
+    display: flex;
+    gap: 24px;
+}
+
+.attivita-immagini img {
+    width: 50%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+
+
+
+footer {
+    max-width: 100%;
+    margin-top: 120px;
+    padding: 0 0 48px 0; 
+}
+
+footer p {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 20px 0 20px;
+    border-top: 1px solid #eaeaea; 
+    font-size: 13px;
+    color: #000000;
+}
+
+
+
+
+@media (max-width: 991px) {
+    main:not(:has(.parchi)) { display: flex; flex-direction: column; }
+    main section { max-width: 100%; }
+    .parchi { grid-template-columns: repeat(2, 1fr); }
+    .attivita-contenitore { flex-direction: column; }
+    section.frase { margin-top: 40px; }
+}
